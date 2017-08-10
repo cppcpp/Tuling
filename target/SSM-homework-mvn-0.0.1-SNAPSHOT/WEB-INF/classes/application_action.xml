@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+       http://www.springframework.org/schema/beans 
+       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://www.springframework.org/schema/tx 
+       http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context-3.0.xsd
+       http://www.springframework.org/schema/aop 
+       http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+       
+	<bean id="userDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="mapperInterface" value="com.cpp.dao.UserDao" />
+		<!-- 指定这个 scanner 所使用的sqlSessionFactory -->
+		<property name="sqlSessionFactory" ref="SqlSessionFactory" />
+	</bean>
+	
+	<bean id="userService" class="com.cpp.service.UserServiceImpl">
+	    <property name="userDao" ref="aopdao"></property>
+	</bean>
+
+	<bean id="userLogin" class="com.cpp.action.UserAction">
+		<property name="userService" ref="aopservice"></property>
+	</bean>
+	
+	<bean id="sellDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="mapperInterface" value="com.cpp.dao.SellDao"/>
+		<property name="sqlSessionFactory" ref="SqlSessionFactory"></property>
+	</bean>
+	<bean id="sellService" class="com.cpp.service.SellServiceImpl">
+		<property name="sellDao" ref="sellDao"></property>
+	</bean>
+	<bean id="sellAction" class="com.cpp.action.SellAction">
+		<property name="service" ref="sellService"/>
+	</bean>
+</beans>

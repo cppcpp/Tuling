@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    
+    <!-- 属性不在同一个地方设置的读取顺序：
+    1.先读取<property>标签里的属性值
+    2.在读取resource属性中指定的属性文件，覆盖同名属性
+    3.最后读取作为方法参数传递的属性，并覆盖已读取的同名属性。 -->
+    <properties resource="">
+        <property name="" value=""/>
+    </properties>
+    <settings>
+        <setting name="" value=""/>
+    </settings>
+    <typeHandlers>
+        <typeHandler handler="" javaType="" jdbcType=""></typeHandler>
+        <package name=""/>
+    </typeHandlers>
+    
+    <!-- 环境配置---不同的生产环境对应不同的环境配置（比如开发环境和测试环境） -->
+    <environments>
+        <environment id="development">
+            <transactionManager type="jdbc">
+                <property name="" value=""/>
+            </transactionManager>
+            <dataSource type="pooled">
+                <property name="" value=""/>
+            </dataSource>
+        </environment>
+    </environments>
+    
+    
+	<typeAliases>
+		<!-- 手动一个一个配置 别名-->
+		<typeAlias type="com.ssm.entity.User" alias="user"/>
+		<typeAlias type="com.ssm.entity.Music" alias="music" />
+		<!-- 会自动将类名(将首字母小写)作为别名 -->
+		<!-- <package name="com.cpp.entity.User" /> -->
+		<!-- 第三种情况：注解设置别名 -->
+	</typeAliases>
+
+	<!-- 配置sql的映射语句存储路径：
+		1.相对于类路径的资源引用<mapper resource />
+		2.完全限定资源定位符（包括 file:/// 的 URL）<mapper url="" />
+		3.类名<mapper class="" />
+		4.包名 <package name="" />-->
+	<mappers>
+		<!-- 一个一个手动配置 sql语句的映射文件-->
+		<mapper resource="com/ssm/dao/UserDao.xml"/>
+		<mapper resource="com/ssm/dao/MusicDao.xml" />
+		<!-- 自动 扫描包内的接口与配置文件 -->
+		<!-- <package name="com.ssm.dao" /> -->
+	</mappers>
+</configuration>

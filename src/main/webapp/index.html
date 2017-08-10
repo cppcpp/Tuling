@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jquery仿微信聊天对话窗口滚动样式</title>
+
+<!--讨论区滚动条begin-->
+<link rel="stylesheet" type="text/css" href="css/jscrollpane1.css" />
+<script src="js/jquery-1.4.2.min.js" type="text/javascript"></script>
+<!--引用jquery-1.4.2.min.js会影响添加表情，不引用jquery-1.4.2.min.js就不支持IE、火狐浏览器的鼠标滚轮插件-->
+<!-- the mousewheel plugin -->
+<script type="text/javascript" src="js/jquery.mousewheel.js"></script>
+<!-- the jScrollPane script -->
+<script type="text/javascript" src="js/jquery.jscrollpane.min.js"></script>
+<script type="text/javascript" src="js/scroll-startstop.events.jquery.js"></script>
+<script type="text/javascript" src="js/my.js"></script>
+<!--讨论区滚动条end-->
+</head>
+<body>
+
+<br>
+<div class="talk">
+	<div class="talk_title"><span>手机讨论发言</span></div>
+	<div class="talk_record">
+		<div id="jp-container" class="jp-container">
+			<div class="talk_recordbox">
+				<div class="user"><img src="images/thumbs/jiqiren.png"/>小图</div>
+				<div class="talk_recordtextbg">&nbsp;</div>
+				<div class="talk_recordtext">
+					<h3>hello，这里是图灵机器人，在这里，按照我们要求的输入，你将能查询到你想要的信息</h3>
+					<span class="talk_time">2014-09-15 15:06</span>
+				</div>
+			</div>
+			<div class="talk_recordbox">
+				<div class="user"><img src="images/thumbs/jiqiren.png"/>小图</div>
+				<div class="talk_recordtextbg">&nbsp;</div>
+				<div class="talk_recordtext">
+					<h3>如果想听故事，请输入类似"讲个故事"这样的表达</h3>
+					<span class="talk_time">2014-09-15 15:06</span>
+				</div>
+			</div>
+			
+			<div class="talk_recordbox">
+				<div class="user"><img src="images/thumbs/jiqiren.png"/>小图</div>
+				<div class="talk_recordtextbg">&nbsp;</div>
+				<div class="talk_recordtext">
+					<h3>如果想想玩成语接龙，请以这样的格式输入："成语接龙一诺千金"</h3>
+					<span class="talk_time">2014-09-15 15:06</span>
+				</div>
+			</div>
+			
+			<div class="talk_recordbox">
+				<div class="user"><img src="images/thumbs/jiqiren.png"/>小图</div>
+				<div class="talk_recordtextbg">&nbsp;</div>
+				<div class="talk_recordtext">
+					<h3>如果想做菜，可以问我："鱼香肉丝怎么做"</h3>
+					<span class="talk_time">2014-09-15 15:06</span>
+				</div>
+			</div>
+			
+			<div class="talk_recordbox">
+				<div class="user"><img src="images/thumbs/jiqiren.png"/>小图</div>
+				<div class="talk_recordtextbg">&nbsp;</div>
+				<div class="talk_recordtext">
+					<h3>如果想想听笑话，请输入"讲个笑话"</h3>
+					<span class="talk_time">2014-09-15 15:06</span>
+				</div>
+			</div>
+			<div class="talk_recordbox">
+				<div class="user"><img src="images/thumbs/jiqiren.png"/>小图</div>
+				<div class="talk_recordtextbg">&nbsp;</div>
+				<div class="talk_recordtext">
+					<h3>如果看新闻，你可以输入："今日新闻"</h3>
+					<span class="talk_time">2014-09-15 15:06</span>
+				</div>
+			</div>
+			<div class="talk_recordbox">
+				<div class="user"><img src="images/thumbs/jiqiren.png"/>小图</div>
+				<div class="talk_recordtextbg">&nbsp;</div>
+				<div class="talk_recordtext">
+					<h3>想去查询航班，试试"今天北京到上海的航班"</h3>
+					<span class="talk_time">2014-09-15 15:06</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="talk_word">
+		&nbsp;
+		<input class="add_face" id="facial" type="button" title="添加表情" value="" />
+		<input type="text" class="messages emotion" id="message_send" autocomplete="off" value="在这里输入文字" onFocus="if(this.value=='在这里输入文字'){this.value='';}"  onblur="if(this.value==''){this.value='在这里输入文字';}"  />
+		<input class="talk_send" type="button" title="发送" value="发送" />
+	</div>
+</div>
+</body>
+</html>
